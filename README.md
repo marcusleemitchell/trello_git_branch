@@ -12,7 +12,7 @@ Install it yourself as an executable:
 2. `cd` into the dir and run `gem install pkg/trello_git_branch-x.x.x.gem`
 3. Be happy.
 
-(optionall)
+(optionally)
 
 4. Edit yout `.zshrc`/`.bashrc` etc. to alias the command to something shorter.
 
