@@ -8,7 +8,15 @@ TODO: Delete this and the text above, and describe your gem
 
 Install it yourself as an executable:
 
-    $ gem install trello_git_branch
+1. Clone the repo locally
+2. `cd` into the dir and run `gem install pkg/trello_git_branch-x.x.x.gem`
+3. Be happy.
+
+(optionall)
+
+4. Edit yout `.zshrc`/`.bashrc` etc. to alias the command to something shorter.
+
+    `alias tgb="trello_git_branch"`
 
 ## Usage
 
