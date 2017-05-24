@@ -6,23 +6,26 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'trello_git_branch'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it yourself as an executable:
 
     $ gem install trello_git_branch
 
 ## Usage
 
-TODO: Write usage instructions here
+Once installed, run `trello_git_branch` within your application dir
+
+You must be on `master` branch for this to work. This enforces good branching practice
+
+The first time you run the command you will be redirected to Trello's developer pages where you'll find your [DEVELOPER_PUBLIC_KEY].
+Add this when prompted.
+
+You'll be redirected once more to accept and be given your [MEMBER_TOKEN]. Again, add this whe prompted.
+
+Once configured correctly, you'll be given a list of card titles from the 'Dev in Progress' Trello list.
+
+HAPPY BRANCHING!
+
+:rocket:
 
 ## Development
 
