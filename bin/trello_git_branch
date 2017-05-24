@@ -3,6 +3,7 @@ require 'term/ansicolor'
 require 'highline/import'
 require 'launchy'
 require 'trello'
+require 'byebug'
 
 module TrelloGitBranch
 
@@ -25,6 +26,7 @@ module TrelloGitBranch
         @developer_public_key = public_key
         `git config --global trello.developer-public-key #{public_key}`
       end
+      @developer_public_key
     end
 
     def self.get_member_token
@@ -33,17 +35,18 @@ module TrelloGitBranch
         puts Term::ANSIColor.green("Getting your member token...")
         puts Term::ANSIColor.yellow("Click 'Allow' and copy the resulting token into the following prompt...")
         sleep(2)
-        Trello.open_authorization_url key: @developer_api_token
+        Trello.open_authorization_url key: @developer_public_key
         member_token = @cli.ask "Member Token: "
         @member_token = member_token
         `git config --global trello.member-token #{member_token}`
       end
+      @member_token
     end
 
   end
 
-  TrelloGitBranchConfig.get_developer_public_key
-  TrelloGitBranchConfig.get_member_token
+  @developer_public_key = TrelloGitBranchConfig.get_developer_public_key
+  @member_token = TrelloGitBranchConfig.get_member_token
 
   if @developer_public_key.present? && @member_token.present?
     Trello.configure do |configuration|
