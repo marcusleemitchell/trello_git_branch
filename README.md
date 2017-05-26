@@ -13,8 +13,9 @@ The branch name is taken from the Trello card title including the card id
 Install it yourself as an executable:
 
 1. Clone the repo locally
-2. `cd` into the dir and run `gem install pkg/trello_git_branch-x.x.x.gem`
-3. Be happy.
+2. `cd` into the dir and run `rake build trello_git_branch.gemspec`
+3. Run `gem install pkg/trello_git_branch-x.x.x.gem` (Get the x.x.x from the output of the previous command
+4. Be happy.
 
 (optionally)
 
