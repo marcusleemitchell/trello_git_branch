@@ -22,6 +22,11 @@ module TrelloGitCommit
   # prompt for message
   msg_body =  @cli.ask "Commit message: "
   msg = msg_prefix + msg_body
+  # prompt for skip-ci
+  skip_ci = @cli.ask "Skip CI? (Y/n): "
+  if %w(nil y Y).include?(skip_ci) || skip_ci.empty?
+    msg = msg + " --skip-ci"
+  end
   # do the commit
   `git commit -am "#{msg}"`
 
