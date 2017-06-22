@@ -8,12 +8,14 @@ Gem::Specification.new do |spec|
   spec.version       = TrelloGitBranch::VERSION
   spec.authors       = ["Marcus Mitchell"]
   spec.email         = ["marcusleemitchell@gmail.com"]
+  spec.homepage      = "http://marcusleemitchell.co.uk"
 
   spec.summary       = %q{Quickly create and checkout a git branch based on the name of the selected Trello card}
   spec.description   = %q{
     On first run you will be redirected to Trello where you'll find your [DEVELOPER_API_KEY] and [MEMBER_TOKEN].
     Enter these when prompted. You'll only need to do this once.
     Now when running `trello_git_branch` you'll be given a list of titles for cards in the 'Dev in Progess' Trello List to pick from.
+    `trello_git_commit` will use the card number in the branch name to prefix a commit message making it easier to see related commits
   }
   spec.license       = "MIT"
 
@@ -33,13 +35,13 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "term-ansicolor"
-  spec.add_dependency "ruby-trello"
-  spec.add_dependency "launchy"
-  spec.add_dependency "json"
-  spec.add_dependency "highline"
+  spec.add_dependency "term-ansicolor", '~> 0'
+  spec.add_dependency "ruby-trello", '~> 0'
+  spec.add_dependency "launchy", '~> 0'
+  spec.add_dependency "json", '~> 0'
+  spec.add_dependency "highline", '~> 0'
 
   spec.add_development_dependency "bundler", "~> 1.14"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "byebug"
+  spec.add_development_dependency "byebug", '~> 0'
 end

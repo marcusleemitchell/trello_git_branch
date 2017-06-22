@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require "trello_git_branch/version"
 require 'term/ansicolor'
 require 'highline/import'

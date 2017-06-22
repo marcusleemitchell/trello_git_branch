@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+require "trello_git_branch/version"
+require 'term/ansicolor'
+require 'highline/import'
+require 'byebug'
+
+module TrelloGitCommit
+
+  @cli = HighLine.new
+
+  # get the card number or 'NT' from the current branch name
+  branch_name = `git rev-parse --abbrev-ref HEAD`.chomp
+  branch_prefix = branch_name.match(/^(\d*)-/)
+  unless branch_prefix.present?
+    puts Term::ANSIColor.red("Unable to find a card number from the branch name")
+    exit 1
+  end
+  # construct the message prefix
+  msg_prefix = "(#{branch_prefix[1]}) "
+  # prompt for message
+  msg_body =  @cli.ask "Commit message: "
+  msg = msg_prefix + msg_body
+  # do the commit
+  `git commit -am "#{msg}"`
+
+end

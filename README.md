@@ -12,11 +12,12 @@ Install it yourself as an executable:
 2. `cd` into the dir and run `gem install pkg/trello_git_branch-x.x.x.gem`
 3. Be happy.
 
-(optionall)
+(optional)
 
 4. Edit yout `.zshrc`/`.bashrc` etc. to alias the command to something shorter.
 
     `alias tgb="trello_git_branch"`
+    `alias tgc="trello_git_commit"`
 
 ## Usage
 
@@ -34,6 +35,10 @@ Once configured correctly, you'll be given a list of card titles from the 'Dev i
 HAPPY BRANCHING!
 
 :rocket:
+
+`git_trello_commit` can be used to comstruct commit messages prefixed with the card number from the branch.
+
+This makes it much easier to see related commits when viewing `git log`
 
 ## Development
 
