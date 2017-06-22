@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require 'rubygems'
 require "trello_git_branch/version"
 require 'term/ansicolor'
 require 'highline/import'
@@ -12,7 +13,7 @@ module TrelloGitCommit
   # get the card number or 'NT' from the current branch name
   branch_name = `git rev-parse --abbrev-ref HEAD`.chomp
   branch_prefix = branch_name.match(/^(\d*)-/)
-  unless branch_prefix.present?
+  if branch_prefix.nil?
     puts Term::ANSIColor.red("Unable to find a card number from the branch name")
     exit 1
   end
