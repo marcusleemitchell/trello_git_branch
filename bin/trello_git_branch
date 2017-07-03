@@ -64,6 +64,7 @@ module TrelloGitBranch
     card_menu.prompt = Term::ANSIColor.green "Please select from #{trello_list.name} cards:"
     card_menu.choices(*(trello_list.cards.map{ |card| card.url.split("/").last.to_sym })) do |selected_card_name|
       `git checkout -b #{selected_card_name}`
+      `git push --set-upstream origin #{selected_card_name}`
     end
   end
 
