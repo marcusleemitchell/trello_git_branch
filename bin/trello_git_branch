@@ -59,7 +59,7 @@ module TrelloGitBranch
   end
 
   trello_list_dev_in_progress = Trello::List.find('579907267daa16740c633cbc') # Tabl dev - Dev in progess
-  trello_list_dev_to_do = Trello::List.find('59c387971866876afa45b3c7') # Tabl dev sprint - To do
+  trello_list_dev_to_do = Trello::List.find('59c3878149d83b156b6fed82') # Tabl dev sprint - Doing
 
   @cli.choose do |card_menu|
     card_menu.prompt = Term::ANSIColor.green "Please select from the Trello cards above:"
