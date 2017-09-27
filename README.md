@@ -41,7 +41,7 @@ HAPPY BRANCHING!
 
 :rocket:
 
-`git_trello_commit` can be used to comstruct commit messages prefixed with the card number from the branch.
+`trello_git_commit` can be used to construct commit messages prefixed with the card number from the branch.
 
 This makes it much easier to see related commits when viewing `git log`
 
