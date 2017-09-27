@@ -63,7 +63,8 @@ I want to create another executable to standarize the commit messages with the s
 
 .eg
 
-`trello_git_commit_message this is a commit message`
+`trello_git_commit [ENTER]`
+`> this is a commit message`
 
 will become
 
